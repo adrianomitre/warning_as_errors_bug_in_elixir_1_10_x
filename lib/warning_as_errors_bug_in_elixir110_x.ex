@@ -13,6 +13,8 @@ defmodule WarningAsErrorsBugInElixir110X do
 
   """
   def hello do
+    Dict.keys(x: 1)
+    String.rstrip("}", ?})
     :world
   end
 end
