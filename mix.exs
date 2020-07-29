@@ -5,7 +5,7 @@ defmodule WarningAsErrorsBugInElixir110X.MixProject do
     [
       app: :warning_as_errors_bug_in_elixir_1_10_x,
       version: "0.1.0",
-      elixir: "~> 1.10",
+      elixir: "~> 1.5",
       start_permanent: Mix.env() == :prod,
       deps: deps()
     ]
