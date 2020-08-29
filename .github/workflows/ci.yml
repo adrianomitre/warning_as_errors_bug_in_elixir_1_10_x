@@ -39,18 +39,28 @@ jobs:
           - elixir: 1.10.0
             otp: 21.3.8.16
             os: alpine-3.12.0
+            buggy_warnings_as_errors_return_value: true
           - elixir: 1.10.0
             otp: 22.3.4.4
             os: alpine-3.12.0
+            buggy_warnings_as_errors_return_value: true
           - elixir: 1.10.4
             otp: 21.3.8.16
             os: alpine-3.12.0
+            buggy_warnings_as_errors_return_value: true
           - elixir: 1.10.4
             otp: 22.3.4.4
             os: alpine-3.12.0
+            buggy_warnings_as_errors_return_value: true
           - elixir: 1.10.4
             otp: 23.0.3
             os: alpine-3.12.0
+            buggy_warnings_as_errors_return_value: true
     steps:
       - uses: actions/checkout@v2.3.1
       - run: mix compile --warnings-as-errors
+      - name: Workaround for buggy `mix compile --warnings-as-errors` on Elixir 1.10
+        run: |
+          source workaround_buggy_warnings_as_errors_return_value.sh
+          workaround_buggy_warnings_as_errors_return_value
+        if: matrix.buggy_warnings_as_errors_return_value
