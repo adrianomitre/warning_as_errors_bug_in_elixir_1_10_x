@@ -51,6 +51,15 @@ jobs:
           - elixir: 1.10.4
             otp: 23.0.3
             os: alpine-3.12.0
+          - elixir: 1.11.0
+            otp: 21.3.8.18
+            os: alpine-3.12.0
+          - elixir: 1.11.0
+            otp: 22.3.4.11
+            os: alpine-3.12.0
+          - elixir: 1.11.0
+            otp: 23.1.1
+            os: alpine-3.12.0
     steps:
       - uses: actions/checkout@v2.3.1
       - run: mix compile --warnings-as-errors
